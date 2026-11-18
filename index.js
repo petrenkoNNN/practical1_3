@@ -8,18 +8,11 @@ const products = [
   'Яблоки'
 ];
 
-const productList = document.getElementById('product-list');
-const addBtn = document.getElementById('add-btn');
+const productList = document.querySelector('#product-list');
+const addBtn = document.querySelector('#add-btn');
 
 function sortProducts() {
-  products.sort((a, b) => {
-    const x = a.toLowerCase();
-    const y = b.toLowerCase();
-
-    if (x > y) return 1;
-    if (x < y) return -1;
-    return 0;
-  });
+  products.sort((a, b) => a.localeCompare(b, 'ru'));
 }
 
 function renderProducts() {
